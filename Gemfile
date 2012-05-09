@@ -13,12 +13,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test do
+group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
-end
-
-group :development do
   gem 'capistrano'
   gem 'thin'
 end
@@ -27,10 +24,13 @@ group :production do
   gem 'unicorn'
 end
 
-
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
-
 gem 'clearance'
+gem 'twitter-bootstrap-rails'
+gem 'awesome_nested_set'
+gem 'russian'
 
+gem 'cms-pages', :path => '../cms-pages'
+#gem 'cms-settings', :path => '../cms-settings'

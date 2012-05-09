@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120507175023) do
+ActiveRecord::Schema.define(:version => 20120509052732) do
+
+  create_table "cms_pages", :force => true do |t|
+    t.string   "title",                        :null => false
+    t.string   "url",                          :null => false
+    t.text     "body",                         :null => false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.boolean  "active",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "cms_pages", ["url"], :name => "index_cms_pages_on_url", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email"

@@ -1,4 +1,14 @@
 Cms::Application.routes.draw do
+  mount Cms::Pages::Engine => "/cms/pages"
+
+  namespace :cms do
+    namespace :admin do
+      root :to => 'home#index'
+    end
+  end
+
+  root :to => 'application#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

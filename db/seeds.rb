@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+u = User.new
+u.email = 'vlad@druzh.ru'
+u.password = 'gqdil85'
+u.save
+
+# Added by CMS Settings engine
+Cms::Pages::Engine.load_seed

@@ -1,0 +1,12 @@
+/ %li= link_to 'Новости', news_index_path
+/ %li= link_to 'Портфолио', portfolio_path
+/ - menu_pages(:top).each do |page|
+/   %li= link_to page.title, "/pages" + page.url
+/ %li= link_to 'Оставить заявку', new_user_request_path
+= cms_pages_menu
+
+- if signed_in?
+  %li= link_to 'Админка', main_app.cms_admin_root_path
+  %li= link_to "Выход", main_app.sign_out_path, :method => :delete
+- else
+  %li= link_to "Вход", main_app.sign_in_path

@@ -1,0 +1,44 @@
+!!! 5
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title= content_for?(:title) ? yield(:title) : "Панель управления"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    / = javascript_include_tag "application"
+    / = javascript_include_tag "/wymeditor/jquery.wymeditor.min"
+    / = javascript_include_tag "/wymeditor/plugins/list/jquery.wymeditor.list"
+    / = javascript_include_tag "/wymeditor/plugins/table/jquery.wymeditor.table"
+    / = javascript_include_tag "/wymeditor/plugins/resizable/jquery.wymeditor.resizable"
+    / = javascript_include_tag "/wymeditor/plugins/modal_dialog/jquery.wymeditor.modal_dialog"
+    = javascript_include_tag "cms/admin/application"
+    / = stylesheet_link_tag "application", :media => "all"
+    / = stylesheet_link_tag "/wymeditor/jquery.ui.resizable"
+    = stylesheet_link_tag "cms/admin/application", :media => "all"
+    %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'На сайт', main_app.root_path, :class => 'brand'
+          .container.nav-collapse
+            %ul.nav
+              = cms_pages_admin_menu
+              %li= link_to 'Выход', main_app.sign_out_path, :method => :delete
+
+    .container
+
+      .row-fluid
+        .span12
+          = render 'layouts/message'
+          = yield
+    
+      %footer
+        %p &copy; Рекламное агентство &laquo;Высший пилотаж&raquo;, 2012
