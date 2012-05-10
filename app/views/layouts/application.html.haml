@@ -8,37 +8,24 @@
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = javascript_include_tag "application"
-    :css
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
     = stylesheet_link_tag "application", :media => "all"
     / Le fav and touch icons
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
-    / %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
-    / %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
-    / %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
 
   %body
     .container
       .content.row
         .span3
-          .contacts
-            / .entry= Setting.get('HEADER-PHONE', '8 (49621) 4-64-41')
-            / .entry= Setting.get('HEADER-EMAIL1', 'v_pilotaj@mail.ru')
-            / .entry= Setting.get('HEADER-EMAIL2', 'info@vipag.ru')
-        .span9
           #logo
             = image_tag 'logo.png'
-            / .slogan= Setting.get('HEADER-SLOGAN', '7 лет - полёт нормальный')
-          #menu
-            %ul.nav
-              = render 'layouts/menu'
-            .clear
+        .span9
+          / .slogan= Setting.get('HEADER-SLOGAN', '7 лет - полёт нормальный')
         .clear
 
         .row
           .span3
+            %ul
+              = cms_pages_menu
             / = render 'layouts/left_menu'
 
           .span9
