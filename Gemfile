@@ -33,4 +33,6 @@ gem 'awesome_nested_set'
 gem 'russian'
 
 gem 'cms-pages', :path => '../cms-pages'
+gem 'paperclip'
+gem 'attachment_on_the_fly', :git => 'git://github.com/vdv/Attachment-on-the-Fly.git'
 #gem 'cms-settings', :path => '../cms-settings'
