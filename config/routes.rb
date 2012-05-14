@@ -7,7 +7,9 @@ Cms::Application.routes.draw do
     end
   end
 
-  root :to => 'application#index'
+  root :to => 'home#index'
+
+  match '/:url' => 'cms/pages/pages#show', :constraints => {:url => /.*/}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,14 +8,14 @@
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     / = javascript_include_tag "application"
-    / = javascript_include_tag "/wymeditor/jquery.wymeditor.min"
-    / = javascript_include_tag "/wymeditor/plugins/list/jquery.wymeditor.list"
-    / = javascript_include_tag "/wymeditor/plugins/table/jquery.wymeditor.table"
-    / = javascript_include_tag "/wymeditor/plugins/resizable/jquery.wymeditor.resizable"
-    / = javascript_include_tag "/wymeditor/plugins/modal_dialog/jquery.wymeditor.modal_dialog"
     = javascript_include_tag "cms/admin/application"
+    = javascript_include_tag "/wymeditor/jquery.wymeditor.min"
+    = javascript_include_tag "/wymeditor/plugins/list/jquery.wymeditor.list"
+    = javascript_include_tag "/wymeditor/plugins/table/jquery.wymeditor.table"
+    = javascript_include_tag "/wymeditor/plugins/resizable/jquery.wymeditor.resizable"
+    = javascript_include_tag "/wymeditor/plugins/modal_dialog/jquery.wymeditor.modal_dialog"
     / = stylesheet_link_tag "application", :media => "all"
-    / = stylesheet_link_tag "/wymeditor/jquery.ui.resizable"
+    = stylesheet_link_tag "/wymeditor/jquery.ui.resizable"
     = stylesheet_link_tag "cms/admin/application", :media => "all"
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
 
